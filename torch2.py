@@ -3,7 +3,7 @@ import math
 # Initial values (you can change these; starting points affect the solution found)
 x = 1.0
 y = 1.0
-a = 2.0  # Start with a > 0 to avoid issues with negative bases in exponents
+a = -10.0  # Start with a > 0 to avoid issues with negative bases in exponents
 b = 1.0
 
 # Hyperparameters
@@ -15,7 +15,7 @@ epsilon = 1e-8  # Small value to prevent log(0) or negative bases
 # Optimization loop
 for i in range(num_iterations):
     # Ensure a is positive for safe exponentiation and log
-    a = max(a, epsilon)
+    # a = max(a, epsilon)
     
     # Compute z
     z = x * y + a ** b
@@ -38,7 +38,7 @@ for i in range(num_iterations):
     
     # Optional: Print progress every 1000 iterations
     # if i % 10 == 0:
-    print(f"Iteration {i}: loss = {loss:.6f}, z = {z:.6f}")
+    print(f"Iteration {i}: loss = {loss:.6f}, z = {z:.6f}, x = {x:.4f}, y = {y:.4f}, a = {a:.4f}, b = {b:.4f}")
 
 # Final results
 final_z = x * y + a ** b
